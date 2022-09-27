@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { combineLatestInit } from 'rxjs/internal/observable/combineLatest';
 import { UserService } from 'src/app/user.service';
 
@@ -20,6 +21,8 @@ const observable=this.userservice.createUser(this.user);
 observable.subscribe(
   (response:any)=>{
     console.log(response);
+    sessionStorage.setItem('credentials',JSON.stringify(response));
+    this.router.navigate(['']);
     
   },
   function(error){
@@ -31,7 +34,7 @@ observable.subscribe(
 
 }
 
-  constructor(private userservice:UserService) { }
+  constructor(private userservice:UserService,private router:Router) { }
 
   ngOnInit(): void {
   }

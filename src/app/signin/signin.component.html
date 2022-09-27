@@ -1,0 +1,10 @@
+<p>signin works!</p>
+
+<h1>
+    Hi</h1>
+    <label for="uname"><b>Username</b></label>
+    <input type="text" [(ngModel)]="user.username" placeholder="enter your username" class="name"/>
+    <label for="password"><b>Password</b></label>
+    <input type="text" [(ngModel)]="user.password"  placeholder="enter your password" class="password"/>
+    
+    <button type="button" (click)="signin()">Submit</button>

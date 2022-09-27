@@ -1,0 +1,11 @@
+<p>signup works!</p>
+
+<h1>
+    Hi</h1>
+    <label for="uname"><b>Username</b></label>
+    <input type="text" [(ngModel)]="user.username" placeholder="enter your username" class="name"/>
+    <label for="password"><b>Password</b></label>
+    <input type="text" [(ngModel)]="user.password"  placeholder="enter your password" class="password"/>
+    <label for="email"><b>Email</b></label>
+    <input type="text" [(ngModel)]="user.email"  placeholder="enter your email" class="email"/>
+    <button class="btn btn-primary" type="button" (click)="signup()">Submit</button>
