@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserService } from 'src/app/user.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'signin',
   templateUrl: './signin.component.html',
@@ -9,11 +9,11 @@ import { UserService } from 'src/app/user.service';
 })
 export class SigninComponent implements OnInit {
   user={
-    username:"ankita",
-    password:"1234$"
+    username:"ramuuu",
+    password:"rameshh244$"
   }
   
-  constructor(private userservice:UserService) { }
+  constructor(private userservice:UserService,private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +22,14 @@ export class SigninComponent implements OnInit {
     observable.subscribe(
       (response:any)=>{
         console.log(response);
-        
+        sessionStorage.setItem('credentials', JSON.stringify(response));
+        if(response.roles[0]=="ROLE_AUTHOR"){
+          this.router.navigate(['author']);
+        }
+        else if(response.roles[0]=="ROLE_READER"){
+          this.router.navigate(['reader']);
+        }
+        //this.router.navigate(['']);
       },
       function(error){
         alert("Something went wrong")

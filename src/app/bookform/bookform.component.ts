@@ -8,7 +8,15 @@ import { BookService } from '../book.service';
 })
 export class BookformComponent implements OnInit {
   book = {
-    title:"Learn angular"
+    title:"",
+    author:"",
+    category:"",
+    price:"",
+    publisher:"",
+    releaseDate:new Date(),
+    publishedDate:new Date(),
+    content:""
+
   }
   constructor(private bookService:BookService) { }
 
