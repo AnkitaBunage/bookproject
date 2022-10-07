@@ -8,11 +8,19 @@ import { Book } from '../book.model';
   styleUrls: ['./search-book.component.css']
 })
 export class SearchBookComponent implements OnInit {
+
+  uiResponse : any;
+showTable: boolean =false
+
   searchBook = {
     author: "",
     category: "",
     price: "",
     publisher: "",
+  }
+
+  book={
+    id:""
   }
   constructor(private SearchBooksCategoryService: SearchBooksCategoryService) { }
 
@@ -21,7 +29,8 @@ export class SearchBookComponent implements OnInit {
     const observable = this.SearchBooksCategoryService.searchBooksCategory(this.searchBook)
     observable.subscribe((response: any) => {
       console.log(response);
-
+this.uiResponse=response;
+this.showTable=true;
     },
 
       function (error) {

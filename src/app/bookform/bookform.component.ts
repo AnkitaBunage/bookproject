@@ -24,8 +24,14 @@ export class BookformComponent implements OnInit {
     console.log('saved');
    const observable= this.bookService.saveBook(this.book);
    observable.subscribe(response=>{
-     console.log(response);
-  })
+     //console.log(response);
+     alert(response);
+  }
+  ,
+    function(error){
+      alert(error.error.text);
+    }
+  )
 }
 
   ngOnInit(): void {

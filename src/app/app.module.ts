@@ -47,10 +47,9 @@ const routes:Route []= [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     HttpClientModule,RouterModule.forRoot(routes),
-    FormsModule,
-    ReactiveFormsModule
+    FormsModule,ReactiveFormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

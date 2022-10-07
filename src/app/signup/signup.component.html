@@ -10,7 +10,7 @@
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-          <form  [formGroup]="signupForm" style="width: 23rem;" novalidate>
+          <form  style="width: 23rem;" novalidate>
             <div class="form-group">
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign Up</h3>
 
@@ -18,13 +18,7 @@
           <input type="username" id="form2Example18" [(ngModel)]="user.username"class="form-control form-control-lg" name="username" />
           <label class="form-label" for="">Username</label>
             </div>
-
-            <!-- <div ngIf="signupForm.controls['username'].invalid && (signupForm.controls['username'].dirty || signupForm.controls['username'].touched)"
-      class="alert alert-danger">
-      <div *ngIf="signupForm.controls['username'].errors.required">
-        Username is required
-      </div>
-      </div> -->
+           
             <div class="form-outline mb-4">
               <input type="email" [(ngModel)]="user.email" id="" name="email"class="form-control form-control-lg" />
               <label class="form-label" for="">Email address</label>

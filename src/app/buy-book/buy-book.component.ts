@@ -25,7 +25,7 @@ export class BuyBookComponent implements OnInit {
       
     },
     function(error){
-      console.log("Buying Book fails"+error);
+     alert(error.error.text);
     },
     ()=>{this.router.navigate(['signin']);
   }

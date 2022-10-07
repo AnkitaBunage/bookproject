@@ -26,18 +26,10 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  signupForm: FormGroup | undefined;
+  
 
 signup(){
-  this.signupForm = this.fb.group({
-
-    username: ['', Validators.required],
-
-    //  password: ['', Validators.required],
-
-    // email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
-
-  });
+  
   const observable:Observable<any>=this.userservice.signup(this.user);
   observable.subscribe(
     (response:any)=>{

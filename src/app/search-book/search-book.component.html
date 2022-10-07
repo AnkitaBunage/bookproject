@@ -63,6 +63,28 @@
               
             </form>
           </div>
+
+
+          <table *ngIf="showTable">
+            <h2>Search Result:</h2>
+            <tr>
+              <td>Book Id</td>
+              <td>Title</td>
+              <td>Author</td>
+              <td>Category</td>
+              <td>Published Date</td>
+              <td>Publisher</td>
+
+            </tr>
+            <tr  *ngFor='let searchBook of uiResponse'>
+              <td>{{searchBook.id}}</td>
+              <td>{{searchBook.title}}</td>
+              <td>{{searchBook.author}}</td>
+              <td>{{searchBook.category}}</td>
+              <td>{{searchBook.publishedDate}}</td>
+              <td>{{searchBook.publisher}}</td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
